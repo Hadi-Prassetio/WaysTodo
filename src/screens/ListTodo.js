@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { View, Text, TextInput, Image, FlatList, Pressable, TouchableOpacity  } from 'react-native'
+import { View, Text, TextInput, Image, FlatList, Pressable, TouchableOpacity, AsyncStorage  } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
+import CategoryDropdown from '../components/CategoryDropdown'
 import User from '../../assets/user.png'
 import Check from '../../assets/check.png'
 import Checked from '../../assets/checked.png'
@@ -8,6 +9,7 @@ import Date from '../../assets/date.png'
 import Todo from '../../fakeData'
 
 const ListTodo = ({navigation}) => {
+
     return(
         <View style={tw`mx-10 mt-10 mb-60`}>
             <View style={tw`flex flex-row justify-between`}>
@@ -17,7 +19,8 @@ const ListTodo = ({navigation}) => {
             </View>
             <Image source={User}/>
             </View>
-            <TextInput style={tw`w-full bg-gray-200 rounded pl-2 py-2 my-2 border-2 border-gray-200 mt-10 mb-7`} placeholder="Search"/>
+            <TextInput style={tw`w-full bg-gray-200 rounded pl-2 py-2 my-2 border-2 border-gray-200 mt-10 mb-3`} placeholder="Search"/>
+                <CategoryDropdown/>
             <FlatList 
                 data={Todo} 
                 renderItem={({item})=>(

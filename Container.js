@@ -21,6 +21,7 @@ const MyTab = () => {
         <tab.Navigator 
         screenOptions={({route})=>({
             headerShown:false,
+            tabBarLabel:() => {return null},
 
             tabBarIcon : ({focused}) => {
                 let iconName;
@@ -50,7 +51,7 @@ const Container = () => {
                 <stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
                 <stack.Screen name="Login" component={Login} />
                 <stack.Screen name="Register" component={Register} />   
-                <stack.Screen name="Detail Todo" component={DetailTodo} options={{headerShown: false}}/>
+                <stack.Screen name="Detail Todo" component={DetailTodo} />
                 <stack.Screen name="Tab" component={MyTab} options={{headerShown: false}}/>
             </stack.Navigator>
         </NavigationContainer>
