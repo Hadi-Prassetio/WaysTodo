@@ -25,10 +25,9 @@ const AddTodo = () => {
                 },
             };
 
-            await axios.post('https://api.kontenbase.com/query/api/v1/5f961855-d59f-4527-ac23-2a72d0c4de5b/Category', form, config)
-            const response = await axios.get('https://api.kontenbase.com/query/api/v1/5f961855-d59f-4527-ac23-2a72d0c4de5b/Category?$lookup=*', config)
+            await axios.post('https://api.v2.kontenbase.com/query/api/v1/5f961855-d59f-4527-ac23-2a72d0c4de5b/Category', form, config)
+            const response = await axios.get('https://api.v2.kontenbase.com/query/api/v1/5f961855-d59f-4527-ac23-2a72d0c4de5b/Category?$lookup=*', config)
             setData(response.data)
-            console.log(response.data);
             alert("Category Added")
         } catch (error) {
             console.log(error);
@@ -47,7 +46,7 @@ const AddTodo = () => {
                         Authorization: 'Bearer ' + token
                     },
                 };
-            const response = await axios.get('https://api.kontenbase.com/query/api/v1/5f961855-d59f-4527-ac23-2a72d0c4de5b/Category?$lookup=*', config)
+            const response = await axios.get('https://api.v2.kontenbase.com/query/api/v1/5f961855-d59f-4527-ac23-2a72d0c4de5b/Category', config)
             setData(response.data)
             console.log(response.data);
         }

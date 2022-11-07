@@ -28,7 +28,7 @@ const Register = ({navigation}) => {
                 },
             };
             const body = JSON.stringify(register)
-            const response = await axios.post('https://api.kontenbase.com/query/api/v1/5f961855-d59f-4527-ac23-2a72d0c4de5b/auth/register', body, config)
+            const response = await axios.post('https://api.v2.kontenbase.com/query/api/v1/5f961855-d59f-4527-ac23-2a72d0c4de5b/auth/register', body, config)
             console.log(response);
             navigation.navigate("Login")
 

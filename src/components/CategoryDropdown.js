@@ -4,7 +4,7 @@ import {Dropdown} from 'react-native-element-dropdown'
 import axios from 'axios'
 import tw from 'tailwind-react-native-classnames'
 
-export default function CategoryDrop() {
+export default function CategoryDrop({onChange}) {
 
     const [data, setData] = React.useState([]);
     const [dataLoading, setDataLoading] = React.useState(false);
@@ -38,6 +38,7 @@ export default function CategoryDrop() {
       React.useEffect(()=> {
         getData()
       },[data])
+      
       const datas = data.map((item) => {
         return {label: item.name, value: item.name}
       })
@@ -68,7 +69,7 @@ export default function CategoryDrop() {
           onChange={item => {
             setValue(item.value);
             setIsFocus(false);
-          }}
+          }}     
         />
       </View>
     );
